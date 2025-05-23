@@ -24,7 +24,7 @@ class VehicleService {
     }
   }
 
-  void searchByModel(String model) {
+  bool searchByModel(String model) {
     var found =
         _vehicle
             .where(
@@ -33,8 +33,10 @@ class VehicleService {
             .toList();
     if (found.isEmpty) {
       print('No vehicle found');
+      return false;
     } else {
       print('Found vehicle');
+      return true;
     }
   }
 }
