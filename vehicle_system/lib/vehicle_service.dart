@@ -14,7 +14,7 @@ class VehicleService {
   }
 
   removeVehicle(String model) {
-    _vehicle.removeWhere((v) => v.getModel() == model);
+    _vehicle.removeWhere((v) => v.model == model);
     print('vehicle removed');
   }
 
@@ -23,7 +23,7 @@ class VehicleService {
         _vehicle
             .where(
               (_vehicle) =>
-                  _vehicle.getModel().toLowerCase() == model.toLowerCase(),
+                  _vehicle.model.toLowerCase() == model.toLowerCase(),
             )
             .toList();
     if (found.isEmpty) {

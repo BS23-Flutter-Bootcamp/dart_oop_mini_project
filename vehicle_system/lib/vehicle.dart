@@ -11,15 +11,11 @@ abstract class Vehicle {
     print("Engine Started");
   }
 
-  String getMaker() {
-    return _make;
-  }
+  String get maker => _make;
 
-  String getModel() {
-    return _make;
-  }
+  String get model => _model;
 
-  String getYear() {
-    return _year;
-  }
+  String get year => _year;
+
+
 }
