@@ -8,14 +8,13 @@ class Car extends Vehicle {
 
   @override
   void displayInfo() {
-    // TODO: implement displayInfo
+    print('In ${super.year} ${super.model} was made by ${super.maker}.');
   }
 
   @override
   void startEngine() {
     print("Car Engine Started");
-    // TODO: implement startEngine
-    //super.startEngine();
+    
   }
 
 }

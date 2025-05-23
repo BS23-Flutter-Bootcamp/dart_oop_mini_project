@@ -7,14 +7,13 @@ class Bike extends Vehicle {
 
   @override
   void displayInfo() {
-    // TODO: implement displayInfo
+    print('In ${super.year} ${super.model} was made by ${super.maker}.');
   }
 
   @override
   void startEngine() {
     print("Bike Engine Started");
-    // TODO: implement startEngine
-    //super.startEngine();
+    
   }
 
 }
