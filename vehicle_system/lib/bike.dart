@@ -1,9 +1,9 @@
 import 'vehicle.dart';
 
 class Bike extends Vehicle {
-  bool hasCarrier;
+  bool _hasCarrier;
 
-  Bike(super.make, super.model, super.year, this.hasCarrier);
+  Bike(super.make, super.model, super.year, this._hasCarrier);
 
   @override
   void displayInfo() {
@@ -15,5 +15,9 @@ class Bike extends Vehicle {
     print("Bike Engine Started");
     
   }
+
+  bool get carrier => _hasCarrier;
+
+  set carrier(bool val) => _hasCarrier = val;
 
 }

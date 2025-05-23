@@ -1,4 +1,3 @@
-
 import 'package:vehicle_system/vehicle.dart';
 
 class VehicleService {
@@ -13,17 +12,23 @@ class VehicleService {
     // print('object');
   }
 
-  removeVehicle(String model) {
-    _vehicle.removeWhere((v) => v.model == model);
-    print('vehicle removed');
+  bool removeVehicle(String model) {
+    int initialLength = _vehicle.length;
+    _vehicle.removeWhere((v) => v.model.toLowerCase() == model.toLowerCase());
+    if (_vehicle.length < initialLength) {
+      print('Vehicle removed');
+      return true;
+    } else {
+      print('Vehicle not found');
+      return false;
+    }
   }
 
   void searchByModel(String model) {
     var found =
         _vehicle
             .where(
-              (_vehicle) =>
-                  _vehicle.model.toLowerCase() == model.toLowerCase(),
+              (_vehicle) => _vehicle.model.toLowerCase() == model.toLowerCase(),
             )
             .toList();
     if (found.isEmpty) {

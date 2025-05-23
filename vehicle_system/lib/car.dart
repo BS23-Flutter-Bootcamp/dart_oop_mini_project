@@ -2,9 +2,9 @@ import 'vehicle.dart';
 
 class Car extends Vehicle {
 
-  num numberOfDoors;
+  num _numberOfDoors;
 
-  Car(super.make, super.model, super.year, this.numberOfDoors);
+  Car(super.make, super.model, super.year, this._numberOfDoors);
 
   @override
   void displayInfo() {
@@ -16,5 +16,9 @@ class Car extends Vehicle {
     print("Car Engine Started");
     
   }
+
+  num get door => _numberOfDoors;
+
+  set doors(num val) => _numberOfDoors = val;
 
 }

@@ -17,5 +17,11 @@ abstract class Vehicle {
 
   String get year => _year;
 
+  set maker(String val) => _make = val;
+
+  set model(String val) => _model = val;
+
+  set year(String val) => _year = val;
+
 
 }

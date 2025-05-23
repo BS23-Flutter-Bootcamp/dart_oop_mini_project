@@ -1,9 +1,9 @@
 import 'vehicle.dart';
 
 class Truck extends Vehicle{
-  num loadCapacity;
+  num _loadCapacity;
 
-  Truck(super.make, super.model, super.year, this.loadCapacity);
+  Truck(super.make, super.model, super.year, this._loadCapacity);
 
   @override
   void displayInfo() {
@@ -15,5 +15,9 @@ class Truck extends Vehicle{
     print("Truck Engine Started");
     
   }
+
+  num get capacity => _loadCapacity;
+
+  set capacity(num val) => _loadCapacity = val;
 
 }

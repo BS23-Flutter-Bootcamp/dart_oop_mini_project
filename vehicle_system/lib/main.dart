@@ -10,6 +10,10 @@ void main() {
   Car car = Car("BMW", "X7", "2025", 4);
   Truck truck = Truck("Prime", "Optimus Prime", "2025", 1400);
 
+  bike.model = "Hornet 3.0";
+  car.year = '2026';
+  truck.capacity = 4000;
+
   List<Vehicle> vehicle = [car, bike, truck];
 
   for (var element in vehicle) {
@@ -22,7 +26,7 @@ void main() {
   while (true) {
     print("1. Add Vehicle");
     print("2. Remove Vehicle by Model");
-    print("3. SSearch by Model");
+    print("3. Search by Model");
     print("0. Exit");
     stdout.write("Enter choice: ");
     String? choice = stdin.readLineSync();
@@ -57,10 +61,18 @@ void main() {
           print("Invalid vehicle type.");
         }
         break;
+
       case '2':
         stdout.write("Enter model to remove: ");
         String? modelToRemove = stdin.readLineSync();
-        vehicleService.removeVehicle(modelToRemove!);
+        if (modelToRemove != null && modelToRemove.isNotEmpty) {
+          bool removed = vehicleService.removeVehicle(modelToRemove);
+          if (!removed) {
+            print("No vehicle matched the model provided.");
+          }
+        } else {
+          print("Invalid input. Model name cannot be empty.");
+        }
         break;
 
       case '3':
